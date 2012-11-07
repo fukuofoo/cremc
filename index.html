@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile Web App</title>
+<link href="jquery-mobile/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-mobile/jquery-1.5.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+<!-- This reference to phonegap.js will allow for code hints as long as the current site has been configured as a mobile application. 
+	 To configure the site as a mobile application, go to Site -> Mobile Applications -> Configure Application Framework... -->
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="js/trnotes.js"></script>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> <style type="text/css">   html { height: 100% }   body { height: 100%; margin: 0px; padding: 0px }   #map_canvas { height: 100% } </style> <script type="text/javascript"     src="https://maps.google.com/maps/api/js?sensor=true"> </script> <script type="text/javascript">   function initialize() {     var latlng = new google.maps.LatLng(25.46468, 121.557785);     var myOptions = {       zoom: 8,       center: latlng,       mapTypeId: google.maps.MapTypeId.ROADMAP     };     var map = new google.maps.Map(document.getElementById("map_canvas"),         myOptions);   }  </script> 
+
+<style>
+article, footer {
+	display: block;
+}
+#home h2 {
+	margin-bottom: 5px;
+}
+#limit {
+	margin: 0 auto 20px 40px;
+}
+</style>
+</head>
+
+<body onload="initialize()" >
+
+<div data-role="page" id="page">
+	<div data-position="fixed" data-role="header">
+		<h1>首 頁</h1>
+	</div>
+	<div data-role="content">	
+		<ul  data-role="listview"data-inset="true">   
+            <li data-role="list-divider">Overview</li> 
+			<li><a href="#home">trnote</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info" >便利資訊</a></li>
+            <li><a href="camera.html" rel="external">camera</a></li>
+            <li><a href="geo.html" rel="external">目前位置</a></li>
+		</ul>		
+	</div>
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#home">trnote</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+
+<div data-role="page" id="gmap">
+	<div data-position="fixed" data-role="header">
+		<h1>google map</h1>
+	</div>
+	<div id="map_canvas" data-role="content" style="width:500px; height:500px">
+	 
+	</div> 
+    
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+
+<div data-role="page" id="cremc">
+	<div data-position="fixed" data-role="header">
+		<h1>中國建築經理公司</h1>
+	</div>
+	<div data-role="content">	
+		<ul  data-role="listview"data-inset="true">   
+            <li data-role="list-divider">Overview</li> 
+			<li><a href="#intro">公司簡介</a></li>
+            <li><a href="#pro">專業團隊</a></li>
+			<li><a href="#">最新消息</a></li>
+            <li><a href="#">服務項目</a></li>
+            <li><a href="http://chinaremc.com">案例實績</a></li>
+           
+            
+		</ul>			
+	</div>
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+
+<div data-role="page" id="dep">
+	<div data-position="fixed" data-role="header">
+		<h1>公司部門簡介</h1>
+	</div>
+	<div data-role="content">	
+		<ul  data-role="listview"data-inset="true">   
+            <li data-role="list-divider">Overview</li> 
+			<li><a href="#">業務部</a></li>
+            <li><a href="#">專案部</a></li>
+			<li><a href="#">工程部</a></li>
+            <li><a href="#">財務部</a></li>
+            <li><a href="http://chinaremc.com">管理部</a></li>
+           
+            
+		</ul>				
+	</div>
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+
+<div class="flip" id="home" data-role="page">
+  <div data-position="fixed" data-role="header">
+    <h1>Travel Notes</h1>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview">
+      <li><a href="#new">New Entry</a></li>
+    </ul>
+    <div id="entries">
+      <h2>Most Recent Notes</h2>
+      <a href="#" data-role="button" data-inline="true" id="limit">List All</a>
+      <ul id="recent" data-role="listview" data-inset="true" data-filter="true">
+      </ul>
+    </div>
+  </div>
+<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>   
+</div>
+<div data-role="page" id="new">
+  <div data-role="header">
+    <h1>New Note</h1>
+  </div>
+  <div data-role="content">
+    <form action="" method="post" name="insert" id="insert" data-ajax="false">
+      <div data-role="fieldcontain">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="details">Details:</label>
+        <textarea cols="40" rows="8" name="details" id="details"></textarea>
+      </div>
+      <input name="create" type="submit" id="create" value="Insert" />
+    </form>
+  </div>
+</div>
+<div data-role="page" id="editNote">
+  <div data-role="header">
+    <h1>Update Note</h1>
+  </div>
+  <div data-role="content">
+    <form action="" method="post" name="edit" id="edit" data-ajax="false">
+      <div data-role="fieldcontain">
+        <label for="title2">Title:</label>
+        <input type="text" name="title2" id="title2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="details2">Details:</label>
+        <textarea cols="40" rows="8" name="details2" id="details2"></textarea>
+      </div>
+      <input name="update" type="submit" id="update" value="Update" />
+    </form>
+  </div>
+</div>
+<div data-role="page" id="display">
+  <div data-role="header">
+    <h1>Display Note</h1>
+  </div>
+  <div data-role="content">
+    <article></article>
+    <p><a href="#" id="showmap" data-role="button">Show Map</a></p>
+    <footer></footer>
+    <div data-role="controlgroup"><a href="#" data-role="button" id="editItem">Edit Note</a><a href="#" data-role="button" id="delete">Delete Note</a></div>
+  </div>
+</div>
+<div data-role="page" id="map">
+  <div data-role="header">
+    <h1>Display Map</h1>
+  </div>
+  <div data-role="content"></div>
+
+</div>
+
+<div data-role="page" id="info">
+	<div data-position="fixed" data-role="header">
+		<h1>便利資訊</h1>
+	</div>
+	<div data-role="content">	
+		<ul  data-role="listview"data-inset="true">   
+            <li data-role="list-divider">Overview</li> 
+            <li><a href="map.html" rel="external">查地圖</a></li>
+			<li><a href="#intro">氣象</a></li>
+            <li><a href="#pro">交通隊</a></li>
+			<li><a href="#">美食</a></li>
+            <li><a href="#">新聞</a></li>
+            <li><a href="http://chinaremc.com" >熱門網站</a></li>
+           
+            
+		</ul>			
+	</div>
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+
+<div data-role="page" id="intro">
+	<div data-position="fixed" data-role="header">
+		<h1>中國建築經理公司簡介</h1>
+	</div>
+	<div data-role="content">	
+		公司簡介 
+
+本公司成立於民國75年4月，由台灣土地銀行及交通銀行(現改為兆豐國際商業銀行)參與投資成立，登記資本額為新台幣6億元整(實收資本額4.5億元整)。成立迄今25年，素以專業、公正、客觀，在業界建立了品牌形象，也獲得銀行的認同。配合台灣不動產金融之業務發展，今後更期望能貢獻不動產專業之各項服務，協助銀行及相關單位在不動產評估管理以及清理處分方面提供專業之意見，共同為推展不動產信託等業務及改善銀行不良資產而努力。
+
+本公司之組織及成員包括建築、土木、地政、都市計劃、法律、企管、行銷、財務等專門人才，並有金融機構參與投資，借重銀行的信用與本公司的專業能力，提供跨越金融、建築兩大領域的專業服務。
+
+公司自成立以來，受託協助銀行辦理以上各項服務之個案已有850餘件，累計客戶逾650家，以工程造價計算已超過3,900億元，如以不動產價值計算更達9,000億元以上，為國內承作案件最多之建築經理公司。接受各金融機構及企業等委託之不動產價值評估個案也逾2,000件，更曾有多次協助銀行成功清理處分不良債權之案例，如：台北市內湖康寧互助會案、頭份礦工醫院案。
+
+	
+	</div>
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+
+<div data-role="page" id="pro">
+	<div data-position="fixed" data-role="header">
+		<h1>專業團隊</h1>
+	</div>
+	<div data-role="content">	
+		專業團隊  
+
+中國建經專業團隊穩健踏實值得您信賴與委託
+
+中國建築經理公司，有穩健的企業背景、優秀的專業人才和堅強的服務陣容，能為您做更深更廣的服務。
+
+特色一  實力雄厚：唯一由二家銀行共同投資
+成立於中華民國七十五年四月二十四日，係國內第一家成立之建築經理公司。由台灣土地銀行、交通銀行(現改為兆豐國際商業銀行)共同投資，公司資本額為新台幣陸億元（實收資本額為新台幣四億五千萬元），係國內資本額最高之建築經理公司，作風穩健踏實，企業實力雄厚。
+
+
+--------------------------------------------------------------------------------
+
+特色二  立場超然公正：為建築業與銀行之服務
+中國建築經理公司本身不是建築投資業者、不是銷售的仲介公司、不是購屋人、也不是銀行；而是為各業者的安全與利益，提供各項服務。因此立場公正超然，值得信賴與委託。
+
+
+--------------------------------------------------------------------------------
+
+特色三  人才齊備：具房地產專業技術與能力
+中國建築經理公司從規劃、工程、財務、地政、法律到行銷管理，都儲備有一流的專業人才，對房地產不但具備橫向的全盤作業能力，縱向的深入精算均有卓越的管理能力，無論完全委託或部分工作委託，中國建築經理公司都能提供最理想的服務。
+
+
+--------------------------------------------------------------------------------
+
+特色四  重視研究發展：引進新技術訊息
+中國建築經理公司對於先進國家的不動產業者，時常保持聯繫，不斷提供國內建築業者，最新的規劃構想或施工技術。同時，在消費行為及房地產經營趨勢方面，更做客觀及前瞻性的預測。
+
+
+--------------------------------------------------------------------------------
+
+特色五  朝國際化邁進：海外轉投資服務兩岸人民
+中國建築經理公司對於國際及大陸房地市場投入多年的研究與評估，目前與大陸中國建設銀行相關單位共同投資北京開太物業交易保證公司，俾便在兩岸商務交流日趨頻繁中，能為兩岸人民及投資廠商做更進一步的服務。
+
+top
+
+專業管理團隊成員 
+
+◎陳美珍   總經理
+從事不動產業逾三十年，對於不動產估價及各種類型之不動產開發、規劃、及相關之金融、財務皆有專業之素養，歷任泛亞不動產鑑定公司總經理、董事長，76年起擔任中國建築經理公司經理、副總經理，現任中國建築經理公司總經理，中國開發資產管理公司董事長、北京開太物業交易保證有限公司董事長。
+畢業於中國文化大學市政系。
+
+◎謝慧鶯   協理
+具有負責大型購物中心專案、土地開發投資評估及不動產信託規劃之專業經驗，具備信託業務人員資格，曾任美國芝加哥當地建築師事務所設計師、浩華工程顧問工程公司建築部副理、建成建築師事務所干城中心專案經理、台開信託公司建築開發科兼綜合企管科科長，現任中國建築經理公司 協理。
+畢業於成功大學建築系、美國密西根大學建築碩士。
+
+◎陳政治   建築師/專案部經理
+具備中華民國高考建築師資格，專長於建築工程設計及專業營建管理(PCM，Professional Construction Management)，對集合住宅尤有所長。曾任忠泰建設(股)公司工程師、昭凌工程顧問(股)公司儲備幹部、沈祖海聯合建築師事務所專案經理、營建管理部主管，現任中國建築經理公司專案部經理。     畢業於成功大學建築系、美國哥倫比亞大學營管碩士。
+
+◎楊鎮宇    專案部襄理
+
+於不動產界任職於營造與建築領域，對於專案之案前規劃設計檢討、預 算編列、採發作業，及案中工程品質監督、重點監造、成本控制，與案後之交屋、產登、售服等，皆有一定經驗與能力；曾任建設公司工程司、工地主任、與工務部副理等；現任中國建築經理公司專案部襄理。
+
+具地政士、不動產經紀人、甲級廢棄物清除處理士、公共工程品管師、勞安管理員等證照。
+
+畢業於私立萬能工專營建管理組及南港高工建築科。
+
+◎莊遠能   專案部襄理
+
+於建設及營造領域服務逾18年，專長於建築機電工程之專案管理，對於專案之案前規劃設計檢討，機電工程品質監督、裝修工程機電配合、交屋售服，皆有一定經驗與能力。具公共工程品管工程師等證照。
+
+畢業於私立明新工專電機科。
+
+◎謝佳玲    專案部襄理 
+
+在建築師事務所服務逾18年，專長於開發個案評估、建築工程規劃設計、工程界面之整合、預算編列等。
+
+具不動產經紀人、公共工程品管工程師等證照。
+
+畢業於台北工專建築設計科、台灣科技大學營建管理碩士。
+
+◎符國富   工程部經理
+從事土木及建築工程管理廿餘年，對工程營建管理、海砂屋改建、九二一震災等房屋重建皆有豐富經驗，曾任核三廠工程師，中華工程公司土木工程師，現任中國建築經理公司工程部經理。
+畢業於成功大學土木系。
+
+◎陳殷俐   工程師
+任職於營造與建築領域逾15年，專長於建築計劃評估、工程進度查核等。具工地主任證照。曾任台北市政府捷運局工程局工程員，現任中國建築經理公司工程部工程師。
+
+畢業於 中國工商專校土木工程科。
+
+◎李皇堅   業務部高級專員
+熟悉不動產估價、土地開發計劃之可行性評估以及銷售、財務規劃等分析，具有不動產估價、金融業擔保品估價、徵信等多年專業經驗，曾任環宇不動產鑑定股份有限公司專員、元大銀行審查部鑑價科高級專員、京城銀行徵信部高級辦事員，現任中國建築經理公司業務部高級專員。
+
+畢業於逢甲大學土地管理學系
+
+◎胡曾德   財務稽核專員
+從事土木從事買賣、製造、航運及化工原料等產業之財會工作逾30年，曾任美商Union Carbide Corp.會計主任、海陸空承攬業會計副理、化工原料特別助理等職務。現任中國建築經理公司業務專員。
+畢業於銘傳女子商業專科學校會計會統科。
+
+◎陳正雄   法務顧問
+法學素養深厚，專研各種不動產信託、合建、委建、承攬、土地重劃等合約之制定，擅長各類民事訴訟、強制執行之實務、案例及訴訟代理。現任中國建築經理公司法務 顧問。
+畢業於中國文化大學法律系、律師高檢及格、法院書記官考試及格。
+
+
+	
+	</div>
+	<div   data-position="fixed"   data-role="footer" >
+        <div data-role="navbar">
+		<ul >
+			<li><a href="#page">首頁</a></li>
+            <li><a href="#gmap">gmap</a></li>
+			<li><a href="#cremc">cremc</a></li>
+            <li><a href="#dep">部門簡介</a></li>
+            <li><a href="#info">便利資訊</a></li>
+            
+		</ul>
+         </div>		
+	</div>
+</div>
+</body>
+</html>

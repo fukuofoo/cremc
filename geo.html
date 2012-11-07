@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Geolocation API Demo</title>
+	<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
+	<script src="jquery-mobile/jquery-1.5.min.js" type="text/javascript"></script>
+	<script src="jquery-mobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+	<script>
+
+	if (navigator.geolocation) {
+		// Get the User’s Position
+		var options = {
+			enableHighAccuracy: false,
+			maximumAge: 10,
+			timeout: 45000
+		};
+		
+		// successCallback
+		function successHandler(location) {		
+			var message = document.getElementById("message"), html = [];
+			
+			html.push("<img width='256' height='256' src='http://maps.google.com/maps/api/staticmap?center=", location.coords.latitude, ",", location.coords.longitude, "&markers=size:small|color:blue|", location.coords.latitude, ",", location.coords.longitude, "&zoom=16&size=256x256&sensor=false' />");
+			html.push("<p>Longitude: ", location.coords.longitude, "</p>");
+			html.push("<p>Latitude: ", location.coords.latitude, "</p>");
+			html.push("<p>Accuracy: ", location.coords.accuracy, " meters</p>");
+			message.innerHTML = html.join("");
+		}
+		
+		// errorCallback
+		function errorHandler(error) {
+			alert('Attempt to get location failed: ' + error.message);
+		}		
+		
+		navigator.geolocation.getCurrentPosition(successHandler, errorHandler, options);
+	}
+	else {
+		alert("Sorry, your browser not support HTML5 Geolocation API.");
+	}
+
+	</script>
+<link href="jquery-mobile/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div data-role="page" id="geo">
+  <div data-role="header">
+   <a href="index.html#page" data-rel="back">back</a>
+ 
+    <h1>geolocation</h1>
+  </div>
+  <div id="message">Location unknown</div>
+  <<div   data-position="fixed"   data-role="footer" >
+    <h4>頁尾</h4>
+  </div>
+</div>
+
+</body>
+</html>
